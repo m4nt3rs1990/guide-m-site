@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>leyu · 日常查询与对照 · 延伸阅读</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f7f3ed;
+      font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+      color: #3a352f;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fefcf9;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      border-radius: 24px;
+      padding: 2.4rem 2rem 3rem;
+    }
+    @media (min-width: 600px) {
+      .page { padding: 3rem 3.2rem 4rem; }
+    }
+
+    /* hero 区 */
+    .hero {
+      text-align: center;
+      border-bottom: 1px solid #e5ddd3;
+      padding-bottom: 2.2rem;
+      margin-bottom: 2.6rem;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      color: #4d443a;
+      margin-bottom: 0.4rem;
+    }
+    .hero .sub {
+      font-size: 1rem;
+      color: #7d7167;
+      max-width: 480px;
+      margin: 0.6rem auto 0;
+      border-left: 2px solid #d5cbbc;
+      padding-left: 1rem;
+      text-align: left;
+      display: inline-block;
+    }
+
+    /* 优势卡片 —— 日常对照 */
+    .advantage-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 2rem 0 2.4rem;
+    }
+    @media (min-width: 600px) {
+      .advantage-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.6rem;
+      }
+    }
+    .card {
+      background: #f9f6f0;
+      border-radius: 20px;
+      padding: 1.6rem 1.4rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #ede7de;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      border-left: 4px solid #b8aa95;
+      padding-left: 0.8rem;
+      margin-bottom: 0.7rem;
+      color: #4d443a;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #554d44;
+    }
+
+    /* 说明区 — 引用块 */
+    .quote-box {
+      background: #f3eee7;
+      border-left: 6px solid #c2b3a0;
+      padding: 1.4rem 1.6rem;
+      margin: 2.2rem 0;
+      border-radius: 0 16px 16px 0;
+    }
+    .quote-box p {
+      font-style: normal;
+      margin-bottom: 0.3rem;
+    }
+    .quote-box .source {
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      color: #7d7167;
+      text-align: right;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      margin: 2.4rem 0 1.8rem;
+      border-top: 1px dashed #d9d0c4;
+      padding-top: 1.8rem;
+    }
+    .faq-mini h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+      color: #4d443a;
+    }
+    .faq-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #ede7de;
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-weight: 600;
+      color: #5e5348;
+      margin-bottom: 0.2rem;
+      display: flex;
+      gap: 0.4rem;
+    }
+    .faq-q::before {
+      content: "Q.";
+      color: #a48e78;
+      font-weight: 500;
+    }
+    .faq-a {
+      padding-left: 1.4rem;
+      color: #5c554c;
+      font-size: 0.95rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      margin-top: 2.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5ddd3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: baseline;
+    }
+    .footer-links .note {
+      font-size: 0.9rem;
+      color: #7d7167;
+    }
+    .footer-links a {
+      color: #6f6256;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8aa95;
+      padding-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+    .footer-links a:hover {
+      border-bottom: 1px solid #6f6256;
+    }
+
+    /* 内嵌句子中的 a 自然样式 */
+    .inline-link a {
+      color: #6f6256;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #c2b3a0;
+    }
+    .inline-link a:hover {
+      text-decoration-color: #6f6256;
+    }
+
+    .small-meta {
+      color: #9b8f83;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero -->
+  <div class="hero">
+    <h1>leyu · 延伸手册</h1>
+    <div class="sub">
+      查找、对照、随手翻阅 —— 把日常信息梳理成可依赖的线索。
+    </div>
+  </div>
+
+  <!-- 优势区: 场景卡片 -->
+  <div class="advantage-wrap">
+    <div class="card">
+      <h3>对照翻阅</h3>
+      <p>查资料、对比定义、核实说法，不需要来回翻标签。在 <span class="inline-link"><a href="https://m-site-leyu.com">leyu</a></span> 上可以按主题存放自己的对照笔记，每次打开都是上次停留的样子。</p>
+    </div>
+    <div class="card">
+      <h3>延伸阅读</h3>
+      <p>看到一个概念，顺手点开关联条目。从术语到案例，从一个词到一段背景——阅读的链条不被割断，就像手边放着几本翻开的参考书。</p>
+    </div>
+    <div class="card">
+      <h3>日常查询</h3>
+      <p>早晨查天气、通勤看路线、午休翻食谱、晚上整理购物清单。不用记网址，打开 <span class="inline-link"><a href="https://m-site-leyu.com">leyu</a></span> 就能回到自己的常用页面组。</p>
+    </div>
+    <div class="card">
+      <h3>轻量存档</h3>
+      <p>截图、摘录、短评，不需要太重的工具。像在书页边缘折角一样，把值得留意的片段收在固定位置，下次想找就能找到。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 + 引用块 -->
+  <div class="quote-box">
+    <p>“大多数时候我们需要的是能随手翻到的参照物，而不是一个需要反复登录的系统。leyu 的出发点就是让信息回到‘可翻阅’的状态：分类不要超过三层，关键词保持原样，引用来源留在旁边。”</p>
+    <div class="source">—— 来自一份产品手记的摘录</div>
+  </div>
+
+  <p style="margin-bottom: 1.2rem;">
+    在实际使用中，很多人把 <span class="inline-link"><a href="https://m-site-leyu.com">leyu</a></span> 当作自己的“外部第二大脑”：看到一篇感兴趣的科普文章、存一份常用表单、记录家具尺寸或者书籍清单，都直接放在对应的卡片里。不需要排版，不需要分类标签，想到什么就写下来，下次用的时候直接搜关键词。这种方式尤其适合那些每天都在更新但又不值得建一个完整数据库的信息——比如餐馆推荐、药品说明、旅行备忘、保养周期等等。
+  </p>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h2>几个常见疑问</h2>
+    <div class="faq-item">
+      <div class="faq-q">可以放图片吗？</div>
+      <div class="faq-a">支持插入图片链接，直接粘贴即可，图片会显示在内容区，不占额外存储。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">内容会丢失吗？</div>
+      <div class="faq-a">信息储存在本地及同步关联账号中，常规使用下不会丢失。建议定期导出备份。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">适合团队协作吗？</div>
+      <div class="faq-a">目前以个人整理场景为主，共享功能通过链接分享实现，适合小范围的协同参考。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">移动端体验如何？</div>
+      <div class="faq-a">页面自适应，手机浏览器直接打开即可使用，也可以添加到桌面图标。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <span class="note">日常查询 · 对照 · 延伸阅读</span>
+    <span>
+      <a href="https://m-site-leyu.com">leyu</a>
+    </span>
+  </div>
+  <div style="margin-top: 1.2rem; text-align: right; font-size: 0.8rem; color: #b8aa95; border-top: 1px solid #ede7de; padding-top: 0.8rem;">
+    信息整理 · 保持翻阅
+  </div>
+</div>
+</body>
+</html>
