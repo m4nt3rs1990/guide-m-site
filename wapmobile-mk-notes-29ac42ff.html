@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MK体育 · 日常查询与场景对照</title>
+  <style>
+    /* reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fef3e6 0%, #fae2cf 50%, #f5d5c0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 3rem;
+      line-height: 1.6;
+      color: #2e2b28;
+    }
+
+    .page {
+      max-width: 1060px;
+      width: 100%;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 247, 240, 0.85);
+      backdrop-filter: blur(6px);
+      padding: 0.75rem 1.8rem;
+      border-radius: 48px;
+      box-shadow: 0 6px 18px rgba(150, 90, 60, 0.08);
+      margin-bottom: 3rem;
+    }
+    .nav a {
+      text-decoration: none;
+    }
+    .brand {
+      font-weight: 600;
+      font-size: 1.25rem;
+      letter-spacing: 0.3px;
+      color: #784a2e;
+      background: #fce8d9;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #5d3e2b;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #a36d4c;
+    }
+
+    /* 卡片通用 */
+    .card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 10px 28px rgba(150, 90, 60, 0.07);
+      margin-bottom: 2.2rem;
+      transition: transform 0.15s ease;
+    }
+
+    /* hero 标题区域 */
+    .hero {
+      text-align: center;
+      padding: 2.8rem 2rem 2.2rem;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 650;
+      letter-spacing: -0.3px;
+      background: linear-gradient(to right, #7a4d31, #b07a5a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.6rem;
+    }
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #4c3b30;
+    }
+
+    /* 场景三模块 — 网格布局 */
+    .scenes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.6rem;
+      margin-bottom: 2.4rem;
+    }
+    .scene-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 1.8rem 1.5rem 2rem;
+      box-shadow: 0 8px 22px rgba(150, 90, 60, 0.06);
+      transition: all 0.2s;
+    }
+    .scene-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(130, 80, 50, 0.1);
+    }
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #6b452e;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .scene-card p {
+      color: #3d322b;
+      font-size: 0.96rem;
+    }
+    .scene-icon {
+      display: inline-block;
+      font-size: 1.5rem;
+    }
+
+    /* 常见说明 / 摘要 */
+    .faq-section {
+      margin-top: 0.4rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid #efe4db;
+      padding: 1.1rem 0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 600;
+      color: #5f3f2c;
+      margin-bottom: 0.2rem;
+      font-size: 1.02rem;
+    }
+    .faq-a {
+      color: #3f332b;
+      font-size: 0.95rem;
+    }
+
+    /* 内联链接按钮感 */
+    a.inline-btn {
+      color: #784a2e;
+      background: #f7e4d8;
+      padding: 0.1rem 0.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    a.inline-btn:hover {
+      background: #dfc2af;
+      color: #3f281c;
+    }
+
+    /* 响应式 */
+    @media (max-width: 820px) {
+      .scenes-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 1.2rem;
+      }
+      .nav-links {
+        justify-content: center;
+      }
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+      .card, .scene-card {
+        padding: 1.5rem;
+      }
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* 小标签 */
+    .tagline {
+      text-align: center;
+      margin: 1.2rem 0 2.5rem;
+      font-size: 0.95rem;
+      color: #5e4a3b;
+    }
+    .tagline span {
+      background: #f1dfd2;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="nav">
+      <a href="#" class="brand">MK·日常</a>
+      <div class="nav-links">
+        <a href="#scene">场景对照</a>
+        <a href="#faq">常见说明</a>
+        <a href="#about">延伸阅读</a>
+      </div>
+    </nav>
+
+    <!-- hero 区域 -->
+    <div class="card hero">
+      <h1>信息对照 · 灵活延伸</h1>
+      <p>无论是日常查询还是专题对照，<a href="https://wapmobile-mk.com" class="inline-btn">MK体育</a> 都是一种轻量的参考方式。不需要复杂入口，打开就能对着一项项内容来回比对。</p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <h2 style="font-weight: 550; color: #5a3d2b; margin-bottom: 1rem; font-size: 1.2rem;">┃ 三个常见场景</h2>
+    <div class="scenes-grid" id="scene">
+      <div class="scene-card">
+        <h3><span class="scene-icon">📋</span> 日常对照</h3>
+        <p>打开页面后逐项浏览，把感兴趣的内容记下来。不需要跳来跳去，一份内容可以反复看几遍，信息都在同一个地方。</p>
+      </div>
+      <div class="scene-card">
+        <h3><span class="scene-icon">🔄</span> 延伸阅读</h3>
+        <p>看到一条描述，顺手再找找相关说法。从单点内容往外扩展，适合自己慢慢琢磨。使用 <a href="https://wapmobile-mk.com" class="inline-btn">MK体育</a> 作为起点，围绕感兴趣的主题自己补充信息。</p>
+      </div>
+      <div class="scene-card">
+        <h3><span class="scene-icon">📌</span> 碎片整理</h3>
+        <p>平时刷手机看到零散的知识点，集中到一个地方进行简单对照。把不同来源的说法放在一起比较，心里更有数。</p>
+      </div>
+    </div>
+
+    <!-- 常见说明 + FAQ 摘要 -->
+    <div class="card faq-section" id="faq">
+      <h2 style="font-weight: 550; color: #5a3d2b; margin-bottom: 0.6rem; font-size: 1.2rem;">┃ 常见说明 · 简短摘要</h2>
+      <div class="faq-item">
+        <div class="faq-q">▪ 信息的定位是什么？</div>
+        <div class="faq-a">页面提供一类内容参考，适合用来了解基本框架、做简单对照。不构成专业建议，具体判断请结合自身情况。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">▪ 是否有必要每天都看？</div>
+        <div class="faq-a">看个人需要。有些人习惯隔几天打开一次，用作对照；也有人只在想到某个话题时才来翻一翻。轻松使用就好。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">▪ 内容会更新吗？</div>
+        <div class="faq-a">内容结构会不定期调整，但核心是保持可对照、可延伸的状态。如果有新的参照角度，可能会补充进来。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">▪ 可以从哪里开始延伸？</div>
+        <div class="faq-a">比如从 <a href="https://wapmobile-mk.com" class="inline-btn">MK体育</a> 这个站点出发，把里面的条目用自己的话梳理一遍，或者拿它和其他类似页面做对比，很快就能整理出自己的笔记。</div>
+      </div>
+    </div>
+
+    <!-- 一段延伸阅读/提示 -->
+    <div class="card" style="background: #fcf5ef;" id="about">
+      <p style="margin-bottom: 0.5rem; font-weight: 500; color: #674b38;">📖 一些延伸的想法</p>
+      <p style="color: #3b2f27;">很多信息其实经不起“只看一遍”，多看几次、对照着看，才会注意到之前忽略的细节。如果你有记笔记的习惯，可以试着把 <a href="https://wapmobile-mk.com" class="inline-btn">MK体育</a> 中看到的条目用自己的话重新组织，写下来之后理解会更深。另外，不要只看单个页面，把不同来源放在一起对比，往往更有收获。</p>
+      <p style="margin-top: 0.8rem; color: #5f4a39; font-size: 0.9rem;">—— 保持开放，也保持自己的判断。</p>
+    </div>
+
+    <!-- 底部小标签 -->
+    <div class="tagline">
+      <span>日常对照 · 延伸阅读 · 碎片整理</span>
+    </div>
+
+  </div>
+</body>
+</html>
